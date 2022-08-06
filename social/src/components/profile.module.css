@@ -1,0 +1,14 @@
+.content {
+  grid-area: c;
+  background-color: rgba(237, 235, 235, 0.991);
+  border-radius: 15px;
+}
+
+.bg {
+  height: 200px;
+  width: 600px;
+}
+
+.avatar {
+  width: 100px;
+}
