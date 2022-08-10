@@ -1,0 +1,38 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+
+.dialogItems {
+  padding: 20px;
+}
+
+.messages {
+  padding: 20px;
+}
+
+.dialog {
+  border-radius: 5px;
+  background-color: rgba(231, 228, 228, 0.991);
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.active {
+  color: #ff4040;
+  text-decoration: none;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+
+.name {
+  text-decoration: none;
+  padding: 5px;
+  color: black;
+}
+
+.message {
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+}
