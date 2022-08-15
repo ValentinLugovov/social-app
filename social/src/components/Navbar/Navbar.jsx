@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import s from "./nav.module.css";
+import FriendsList from "../Friends/FriendsList/FriendsList";
 
 const Link = (props) => {
   return (
@@ -15,7 +16,7 @@ const Link = (props) => {
   );
 };
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div className={s.nav}>
       <Link path="/profile" name="Profiles" />
@@ -23,6 +24,7 @@ const Navbar = () => {
       <Link path="/news" name="News" />
       <Link path="/music" name="Music" />
       <Link path="/settings" name="Settings" />
+      <FriendsList state={props.state}/>
     </div>
   );
 };
