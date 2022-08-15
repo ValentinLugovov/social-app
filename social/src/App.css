@@ -16,4 +16,5 @@
   grid-area: c;
   background-color: rgba(237, 235, 235, 0.991);
   border-radius: 15px;
+  min-height: 750px;
 }
