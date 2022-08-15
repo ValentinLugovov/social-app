@@ -16,6 +16,7 @@
   background-color: rgba(231, 228, 228, 0.991);
   padding: 5px;
   margin-top: 5px;
+  width: 300px;
 }
 
 .active {
@@ -35,4 +36,9 @@
   padding: 5px;
   border-radius: 5px;
   margin: 5px;
+}
+
+.img {
+  width: 45px;
+  border-radius: 15px;
 }
