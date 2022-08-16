@@ -4,7 +4,10 @@ import user3 from "../img/3857.jpg";
 import user4 from "../img/1500.jpg";
 import user5 from "../img/2038.jpg";
 import user6 from "../img/897.jpg";
-import { renderEntireTree } from "../render";
+
+let renderEntireTree = () => {
+  console.log("mevkme");
+};
 
 let state = {
   profilePage: {
@@ -27,8 +30,9 @@ let state = {
       { id: 2, message: "Nice try, but my Tesla..." },
       { id: 3, message: "May be u want go to the concert?" },
       { id: 4, message: "AAAAAAaaaaAaAaaaA!!!!1!!1" },
-      { id: 5, message: "Я на бронивичке, жду тебя..." },
+      { id: 5, message: "Я на бгронивичке, жду тебя..." },
     ],
+    newMessage: "",
   },
   users: {
     avatar: [
@@ -53,9 +57,28 @@ export let addPost = () => {
   renderEntireTree(state);
 };
 
-export let updatePostText = (newText) => {
+export let addMessage = () => {
+  let addMessage = {
+    id: 6,
+    message: state.messagesPage.newMessage,
+  };
+  state.messagesPage.message.push(addMessage);
+  state.messagesPage.newMessage = "";
+  renderEntireTree(state);
+};
+
+export const updatePostText = (newText) => {
   state.profilePage.postText = newText;
   renderEntireTree(state);
+};
+
+export const updateMessage = (newMessage) => {
+  state.messagesPage.newMessage = newMessage;
+  renderEntireTree(state);
+};
+
+export const subscribe = (observer) => {
+  renderEntireTree = observer;
 };
 
 export default state;
