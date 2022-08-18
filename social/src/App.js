@@ -22,8 +22,7 @@ const App = (props) => {
               element={
                 <Dialogs
                   messagesPage={props.state.messagesPage}
-                  addMessage={props.addMessage}
-                  updateMessage={props.updateMessage}
+                  dispatch={props.dispatch}
                 />
               }
             />
@@ -32,8 +31,7 @@ const App = (props) => {
               element={
                 <Profile
                   profilePage={props.state.profilePage}
-                  addPost={props.addPost}
-                  updatePostText={props.updatePostText}
+                  dispatch={props.dispatch}
                 />
               }
             />
