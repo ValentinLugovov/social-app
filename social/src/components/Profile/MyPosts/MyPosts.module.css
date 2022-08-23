@@ -1,0 +1,51 @@
+.postHeader {
+  font-size: large;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px;
+  margin: 15px;
+  background-color: rgba(101, 194, 201, 0.766);
+  border-radius: 15px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.newPost {
+  border-radius: 15px;
+  background-color: whitesmoke;
+  width: 800px;
+  display: block;
+  margin: 0 auto;
+  outline: none;
+  resize: none;
+  padding: 10px;
+}
+/* 
+.textarea {
+  background-color: rgb(215, 201, 201);
+} */
+
+.sendPost {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px;
+  background-color: #ffaa008e;
+  border-radius: 15px;
+  letter-spacing: 3px;
+  text-align: center;
+  transition: 0.7s background-color;
+  border-style: none;
+  width: 800px;
+  display: block;
+  margin: 0 auto;
+}
+
+.button {
+  margin-top: 10px;
+  /* background-color: #fff; */
+}
+
+button:hover {
+  background-color: #ffaa00;
+  cursor: pointer;
+}
