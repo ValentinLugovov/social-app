@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 import UserOnline from "./UserOnline/UserOnline";
 
 const FriendsList = (props) => {
-  let users = props.state.avatar.map((u) => {
-    return u.online ? <UserOnline id={u.id} img={u.img} /> : "";
+  let users = props.users.avatar.map((u) => {
+    return u.online ? <UserOnline id={u.id} key={u.id} img={u.img} /> : "";
   });
 
   return (
