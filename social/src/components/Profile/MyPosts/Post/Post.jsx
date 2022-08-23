@@ -9,12 +9,10 @@ import user1 from "../../../../img/769.jpg";
 
 const Post = (props) => {
   return (
-    <div className={s.item}>
+    <div className={s.items}>
       <img src={user1}></img>
-      {props.message}
-      <div>
-        <span>like {props.likeCount}</span>
-      </div>
+      <div className={s.item}>{props.message}</div>
+      <span>like {props.likeCount}</span>
     </div>
   );
 };
