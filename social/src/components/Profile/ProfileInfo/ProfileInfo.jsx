@@ -9,9 +9,8 @@ const ProfileInfo = () => {
       <div className={s.profileBlock}>
         <img src={bg1} className={s.bg}></img>
       </div>
-      <div>
-        <img src={avatar} className={s.avatar}></img>
-      </div>
+      <img src={avatar} className={s.avatar}></img>
+      <div className={s.aboutMe}></div>
     </div>
   );
 };
