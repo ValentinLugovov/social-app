@@ -24,7 +24,7 @@ const Navbar = (props) => {
       <Link path="/news" name="News" />
       <Link path="/music" name="Music" />
       <Link path="/settings" name="Settings" />
-      <FriendsList state={props.state}/>
+      <FriendsList users={props.state.users} />
     </div>
   );
 };
