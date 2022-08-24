@@ -8,30 +8,30 @@ const SET_USERS = "SET-USERS";
 
 let initialState = {
   users: [
-    {
-      id: 1,
-      followed: true,
-      fullname: "Jason Stathem",
-      location: { city: "Saratov", country: "Great Britian" },
-      status: "Лучше иметь друга, чем друг друга...",
-      photo: jason,
-    },
-    {
-      id: 2,
-      followed: false,
-      fullname: "Angelina Jolie",
-      location: { city: "Minsk", country: "Belarus" },
-      status: "Beauty is my life!",
-      photo: angelina,
-    },
-    {
-      id: 3,
-      followed: true,
-      fullname: "Christian Bale",
-      location: { city: "Odessa", country: "Ukraine" },
-      status: "I'M THE BATMAN",
-      photo: bale,
-    },
+    // {
+    //   id: 1,
+    //   followed: true,
+    //   fullname: "Jason Stathem",
+    //   location: { city: "Saratov", country: "Great Britian" },
+    //   status: "Лучше иметь друга, чем друг друга...",
+    //   photo: jason,
+    // },
+    // {
+    //   id: 2,
+    //   followed: false,
+    //   fullname: "Angelina Jolie",
+    //   location: { city: "Minsk", country: "Belarus" },
+    //   status: "Beauty is my life!",
+    //   photo: angelina,
+    // },
+    // {
+    //   id: 3,
+    //   followed: true,
+    //   fullname: "Christian Bale",
+    //   location: { city: "Odessa", country: "Ukraine" },
+    //   status: "I'M THE BATMAN",
+    //   photo: bale,
+    // },
   ],
 };
 
