@@ -1,0 +1,20 @@
+img {
+  width: 50px;
+  border-radius: 15px;
+}
+
+/* .item {
+  text-align: center;
+} */
+
+.items {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: 70px auto 70px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 10px;
+  padding: 5px;
+  border: 1px dashed rgb(171, 158, 158);
+  border-radius: 15px;
+}

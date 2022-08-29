@@ -1,0 +1,15 @@
+.bg {
+  height: 300px;
+  width: 920px;
+  border-radius: 15px;
+}
+
+.avatar {
+  width: 80px;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+.profileBlock {
+  text-align: center;
+}

@@ -1,0 +1,22 @@
+.nav {
+  grid-area: n;
+  background-color: rgba(101, 194, 201, 0.766);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.item {
+  color: #ff4040;
+  text-decoration: none;
+  padding-top: 15px;
+}
+
+.active {
+  color: #ffaa00;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 5px;
+  padding-right: 70px;
+  padding-left: 10px;
+  background-color: #009999;
+}
