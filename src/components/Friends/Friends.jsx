@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import s from "./friends.module.css";
 import * as axios from "axios";
-import user from "../../img/1500.jpg";
+import user from "../../img/users.jpeg";
 
 class Friends extends React.Component {
   componentDidMount() {
