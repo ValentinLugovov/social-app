@@ -76,4 +76,23 @@ button:hover {
 
 .selectedPage {
   font-weight: bold;
+  background-color: #ffaa008e;
+  padding: 7px;
+  border-radius: 5px;
+  font: 300 20px Poppins;
+  border: 1px solid rgba(101, 194, 201, 0.766);
+}
+
+.currentPageBox {
+  text-align: center;
+  margin: 20px auto;
+  cursor: pointer;
+  font: 300 18px Poppins;
+  background-color: rgba(101, 194, 201, 0.345);
+  border-radius: 10px;
+  max-width: 800px;
+}
+
+.currentPageBox span {
+  margin: 10px;
 }
