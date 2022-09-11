@@ -73,3 +73,7 @@ button:hover {
   background-color: #ffaa00;
   cursor: pointer;
 }
+
+.selectedPage {
+  font-weight: bold;
+}
