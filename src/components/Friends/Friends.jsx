@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import s from "./friends.module.css";
 import * as axios from "axios";
 import user from "../../img/users.jpeg";
@@ -17,7 +17,7 @@ class Friends extends React.Component {
   }
 
   onPageChanged = (pageNumber) => {
-    this.props.setCurrentPage(pageNumber)
+    this.props.setCurrentPage(pageNumber);
     axios
       .get(
         `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`
@@ -25,26 +25,40 @@ class Friends extends React.Component {
       .then((response) => {
         this.props.setUsers(response.data.items);
       });
-  }
+  };
 
   render() {
     // Делим количество юзеров на размер страницы
-    let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+    let pagesCount = Math.ceil(
+      this.props.totalUsersCount / this.props.pageSize
+    );
     // Создаем массив для количества страниц
     let pages = [];
     // Пушим в массив
     for (let i = 1; i <= pagesCount; i++) {
       pages.push(i);
     }
+    // сохраняем количество страниц
+    let curP = this.props.currentPage;
+    // сколько страниц влево добавляем от выбранной страницы после того как выбранная страница будет больше 7
+    let pagesOnLeft = curP - 7 < 0 ? 0 : curP - 7;
+    // сколько страниц доавить правее от выбранной
+    let pagesOnRight = curP + 6;
+    // разрезаем массив pages
+    let slicedPages = pages.slice(pagesOnLeft, pagesOnRight);
 
     return (
       <div className={s.friendsList}>
-        <div>
+        <div className={s.currentPageBox}>
           {/* Отправляем выбраную количество страниц на UI, если выбранная страница совпадает со state добавляем класс */}
-          {pages.map((p) => {
+          {slicedPages.map((p) => {
             return (
-              <span className={this.props.currentPage === p && s.selectedPage}
-              onClick={(event) => {this.onPageChanged(p)}}>
+              <span
+                className={this.props.currentPage === p && s.selectedPage}
+                onClick={(event) => {
+                  this.onPageChanged(p);
+                }}
+              >
                 {p}
               </span>
             );
