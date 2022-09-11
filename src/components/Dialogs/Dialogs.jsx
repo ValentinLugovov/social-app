@@ -25,11 +25,13 @@ const Dialogs = (props) => {
       <div className={s.dialogItems}>{dialogs}</div>
       <div className={s.messages}>{messages}</div>
       <div>
-        <textarea
-          placeholder="Enter your message"
-          onChange={onChangeMessage}
-          value={props.newMessage}
-        />
+        <div className={s.textarea}>
+          <textarea
+            placeholder="Enter your message"
+            onChange={onChangeMessage}
+            value={props.newMessage}
+          />
+        </div>
         <button onClick={onSendMessage}>Send Message</button>
       </div>
     </div>
