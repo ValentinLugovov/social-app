@@ -5,16 +5,51 @@ import user from "../../img/1500.jpg";
 
 class Friends extends React.Component {
   componentDidMount() {
+    // Запрашиваем информацию у сервера
     axios
-      .get("https://social-network.samuraijs.com/api/1.0/users")
+      .get(
+        `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`
+      )
+      .then((response) => {
+        this.props.setUsers(response.data.items);
+        this.props.setUsersTotalCount(response.data.totalCount);
+      });
+  }
+
+  onPageChanged = (pageNumber) => {
+    this.props.setCurrentPage(pageNumber)
+    axios
+      .get(
+        `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`
+      )
       .then((response) => {
         this.props.setUsers(response.data.items);
       });
   }
 
   render() {
+    // Делим количество юзеров на размер страницы
+    let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+    // Создаем массив для количества страниц
+    let pages = [];
+    // Пушим в массив
+    for (let i = 1; i <= pagesCount; i++) {
+      pages.push(i);
+    }
+
     return (
       <div className={s.friendsList}>
+        <div>
+          {/* Отправляем выбраную количество страниц на UI, если выбранная страница совпадает со state добавляем класс */}
+          {pages.map((p) => {
+            return (
+              <span className={this.props.currentPage === p && s.selectedPage}
+              onClick={(event) => {this.onPageChanged(p)}}>
+                {p}
+              </span>
+            );
+          })}
+        </div>
         {this.props.friends.map((u) => (
           <div key={u.id}>
             <div className={s.user}>
