@@ -13,3 +13,9 @@
 .profileBlock {
   text-align: center;
 }
+
+.userPhoto {
+  width: 80px;
+  border-radius: 15px;
+  margin-top: 15px;
+}
