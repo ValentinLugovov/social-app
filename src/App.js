@@ -9,12 +9,13 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import store from "./redux/redux-store";
 import FriendsContainer from "./components/Friends/FriendsContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer]";
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
+        <HeaderContainer />
         <Navbar state={store.getState().users} />
         <div className="app-content">
           <Routes>
