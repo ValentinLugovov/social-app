@@ -8,7 +8,14 @@
 
 .friendsText {
   text-decoration: none;
+  letter-spacing: 1px;
+  color: #000000;
+}
+
+.active {
   color: #ffaa00;
+  text-decoration: none;
+  letter-spacing: 1px;
 }
 
 .items {
