@@ -1,10 +1,27 @@
+.header {
+  grid-area: h;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  background-color: rgba(101, 194, 201, 0.766);
+  border-radius: 15px;
+  align-items: center;
+  justify-items: center;
+  font: 300 15px Poppins;
+}
+
 .logo {
   width: 45px;
   padding: 7px;
+  grid-column: span 10;
+  justify-self: start;
 }
 
-.header {
-  grid-area: h;
-  background-color: rgba(101, 194, 201, 0.766);
-  border-radius: 15px;
+.loginBlock {
+  grid-column: span 2;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  letter-spacing: 1.5px;
 }
