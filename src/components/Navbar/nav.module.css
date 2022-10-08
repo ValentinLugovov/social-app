@@ -3,12 +3,14 @@
   background-color: rgba(101, 194, 201, 0.766);
   border-radius: 15px;
   padding: 20px;
+  font: 300 16px Poppins;
 }
 
 .item {
-  color: #ff4040;
+  color: #000000;
   text-decoration: none;
   padding-top: 15px;
+  letter-spacing: 1.5px;
 }
 
 .active {
@@ -16,7 +18,7 @@
   text-decoration: none;
   border-radius: 10px;
   padding: 5px;
-  padding-right: 70px;
-  padding-left: 10px;
+  padding-right: 25px;
+  padding-left: 25px;
   background-color: #009999;
 }
