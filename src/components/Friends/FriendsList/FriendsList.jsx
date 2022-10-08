@@ -11,7 +11,7 @@ const FriendsList = (props) => {
   return (
     <div>
       <div className={s.header}>
-        <NavLink to="/friends" className={s.friendsText}>
+        <NavLink to="/friends" className={(navData) => (navData.isActive ? s.active : s.friendsText)}>
           Friends Online
         </NavLink>
       </div>
