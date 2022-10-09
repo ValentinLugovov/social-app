@@ -4,6 +4,7 @@ const SET_USERS = "SET-USERS";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT";
 const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
+const TOGGLE_IS_FOLLOWING_PROGRESS = "TOGGLE_IS_FOLLOWING_PROGRESS";
 
 let initialState = {
   users: [],
@@ -11,6 +12,7 @@ let initialState = {
   totalUsersCount: 0,
   currentPage: 1,
   isFetching: false,
+  followingInProgress: [],
 };
 
 const friendsReducer = (state = initialState, action) => {
@@ -56,6 +58,13 @@ const friendsReducer = (state = initialState, action) => {
         ...state,
         isFetching: action.isFetching,
       };
+    case TOGGLE_IS_FOLLOWING_PROGRESS:
+      return {
+        ...state,
+        followingInProgress: action.followingInProgress
+          ? [...state.followingInProgress, action.userId]
+          : state.followingInProgress.filter((id) => id !== action.userId),
+      };
     default:
       return state;
   }
@@ -79,7 +88,13 @@ export const setUsersTotalCount = (totalUsersCount) => ({
 // функция возвращает action
 export const toggleIsFetching = (isFetching) => ({
   type: TOGGLE_IS_FETCHING,
-  isFetching, // Почему именно isFetching? action - это объект, у которого есть type и свойства нужные reducer для обработки самого action. Раз friendsReducer из action достает isFetching, значит мы это свойство формируем должны сформировать в данном объекте 
+  isFetching, // Почему именно isFetching? action - это объект, у которого есть type и свойства нужные reducer для обработки самого action. Раз friendsReducer из action достает isFetching, значит мы это свойство формируем должны сформировать в данном объекте
+});
+
+export const toggleIsFollowingProgress = (followingInProgress, userId) => ({
+  type: TOGGLE_IS_FOLLOWING_PROGRESS,
+  followingInProgress,
+  userId
 });
 
 export default friendsReducer;
