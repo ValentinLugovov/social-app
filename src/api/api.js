@@ -8,6 +8,16 @@ const instance = axios.create({
   baseURL: "https://social-network.samuraijs.com/api/1.0/",
 });
 
+const instance2 = {
+  method: "GET",
+  url: "https://shazam.p.rapidapi.com/charts/track",
+  params: { locale: "en-US", pageSize: "20", startFrom: "0" },
+  headers: {
+    "X-RapidAPI-Key": "cd935ebd44mshbef02fed09d5b8dp1719f0jsn5f6313315d71",
+    "X-RapidAPI-Host": "shazam.p.rapidapi.com",
+  },
+};
+
 export const userAPI = {
   getUsers(currentPage, pageSize) {
     return instance
@@ -37,5 +47,11 @@ export const authAPI = {
 export const profileAPI = {
   getUsersProfile(userId) {
     return instance.get(`profile/` + userId).then((response) => response.data);
+  },
+};
+
+export const musicAPI = {
+  getMusicList() {
+    return axios.request(instance2).then((response) => response.data);
   },
 };
