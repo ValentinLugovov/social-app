@@ -1,0 +1,17 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(12, 12fr);
+  padding: 30px;
+}
+
+.box img {
+  width: 100px;
+}
+
+.imgBox {
+  grid-column: span 2;
+}
+
+.title {
+  grid-column: span 10;
+}
