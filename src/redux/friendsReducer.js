@@ -85,7 +85,7 @@ export const setUsersTotalCount = (totalUsersCount) => ({
   type: SET_TOTAL_USERS_COUNT,
   count: totalUsersCount,
 });
-// функция возвращает action
+// функция возвращает вызов action
 export const toggleIsFetching = (isFetching) => ({
   type: TOGGLE_IS_FETCHING,
   isFetching, // Почему именно isFetching? action - это объект, у которого есть type и свойства нужные reducer для обработки самого action. Раз friendsReducer из action достает isFetching, значит мы это свойство формируем должны сформировать в данном объекте
