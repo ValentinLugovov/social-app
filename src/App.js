@@ -10,6 +10,7 @@ import store from "./redux/redux-store";
 import FriendsContainer from "./components/Friends/FriendsContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer]";
+import MusicContainer from "./components/Music/MusicContainer";
 
 const App = () => {
   return (
@@ -27,7 +28,7 @@ const App = () => {
               <Route path=":userId" element={<ProfileContainer />} />
             </Route>
             <Route path="/news" element={<News />} />
-            <Route path="/music" element={<Music />} />
+            <Route path="/music" element={<MusicContainer />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/friends" element={<FriendsContainer />} />
           </Routes>
