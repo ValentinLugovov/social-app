@@ -4,6 +4,7 @@ import messagesReducer from "./messagesReducer";
 import usersReducer from "./usersReducer";
 import friendsReducer from "./friendsReducer";
 import authReducer from "./authReducer";
+import musicReducer from "./musicReducer";
 
 let reducers = combineReducers({
   profilePage: profileReducer,
@@ -11,6 +12,7 @@ let reducers = combineReducers({
   users: usersReducer,
   friendsPage: friendsReducer,
   auth: authReducer,
+  musicPage: musicReducer,
 });
 
 let store = createStore(reducers);
