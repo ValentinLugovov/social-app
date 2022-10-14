@@ -2,7 +2,7 @@ import React from "react";
 import s from "./friends.module.css";
 import user from "../../img/users.jpeg";
 import { NavLink } from "react-router-dom";
-import { followAPI, unfollowAPI } from "../../api/api";
+import { userAPI } from "../../api/api";
 
 let Friends = (props) => {
   // Делим количество юзеров на размер страницы
@@ -65,32 +65,20 @@ let Friends = (props) => {
           <div className={s.btns}>
             {u.followed ? (
               <button
-                disabled={props.followingInProgress.some(id => id === u.id)}
+                disabled={props.followingInProgress.some((id) => id === u.id)}
                 className={s.button}
                 onClick={() => {
-                  props.toggleIsFollowingProgress(true, u.id);
-                  followAPI.deleteUser(u.id).then((data) => {
-                    if (data.resultCode === 0) {
-                      props.unfollow(u.id);
-                    }
-                    props.toggleIsFollowingProgress(false, u.id);
-                  });
+                  props.follow(u.id);
                 }}
               >
                 UNFOLLOW
               </button>
             ) : (
               <button
-                disabled={props.followingInProgress.some(id => id === u.id)}
+                disabled={props.followingInProgress.some((id) => id === u.id)}
                 className={s.button}
                 onClick={() => {
-                  props.toggleIsFollowingProgress(true, u.id);
-                  unfollowAPI.postUser(u.id).then((data) => {
-                    if (data.resultCode === 0) {
-                      props.follow(u.id);
-                    }
-                    props.toggleIsFollowingProgress(false, u.id);
-                  });
+                  props.unfollow(u.id);
                 }}
               >
                 FOLLOW
