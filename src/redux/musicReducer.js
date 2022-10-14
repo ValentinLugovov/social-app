@@ -1,3 +1,5 @@
+import { musicAPI } from "../api/api";
+
 const SET_TITLE = "SET_TITLE";
 const SET_SUBTITLE = "SET_SUBTITLE";
 const SET_IMAGE = "SET_IMAGE";
@@ -54,5 +56,19 @@ export const toggleIsFetching = (isFetching) => ({
   type: TOGGLE_IS_FETCHING,
   isFetching,
 });
+
+export const getTopMusic = () => {
+  return (dispatch) => {
+    dispatch(toggleIsFetching(true));
+
+    musicAPI.getMusicList().then((data) => {
+      // this.props.setTitle(data.tracks[1].title);
+      // this.props.setSubTitle(data.tracks[1].subtitle);
+      // this.props.setImage(data.tracks[0].share.image);
+      dispatch(toggleIsFetching(false));
+      dispatch(getTracks(data.tracks));
+    });
+  };
+};
 
 export default musicReducer;
