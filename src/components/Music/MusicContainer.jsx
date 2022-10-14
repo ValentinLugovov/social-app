@@ -6,22 +6,14 @@ import {
   setImage,
   getTracks,
   toggleIsFetching,
+  getTopMusic,
 } from "../../redux/musicReducer";
-import { musicAPI } from "../../api/api";
 import Music from "./Music";
 import Preloader from "../common/Preloader/Preloader";
 
 class MusicContainer extends React.Component {
   componentDidMount() {
-    this.props.toggleIsFetching(true);
-
-    musicAPI.getMusicList().then((data) => {
-      // this.props.setTitle(data.tracks[1].title);
-      // this.props.setSubTitle(data.tracks[1].subtitle);
-      // this.props.setImage(data.tracks[0].share.image);
-      this.props.toggleIsFetching(false);
-      this.props.getTracks(data.tracks);
-    });
+    this.props.getTopMusic();
   }
 
   render() {
@@ -53,4 +45,5 @@ export default connect(mapStateToProps, {
   setImage,
   getTracks,
   toggleIsFetching,
+  getTopMusic,
 })(MusicContainer);
