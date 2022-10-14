@@ -1,3 +1,5 @@
+import { profileAPI } from "../api/api";
+
 const ADD_POST = "ADD-POST";
 const UPDATE_POST_TEXT = "UPDATE-POST-TEXT";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
@@ -38,10 +40,21 @@ const profileReducer = (state = initialState, action) => {
 
 // функция, которая возвращает объект action(в котором находятся все данные для редьюсера )
 export const addPostActionCreater = () => ({ type: ADD_POST });
-export const setUsersProfile = (profile) => ({ type: SET_USER_PROFILE, profile });
+export const setUsersProfile = (profile) => ({
+  type: SET_USER_PROFILE,
+  profile,
+});
 export const updatePostTextActionCreater = (text) => ({
   type: UPDATE_POST_TEXT,
   newText: text,
 });
+
+export const getUserId = (userId) => {
+  return (dispatch) => {
+    profileAPI.getUsersProfile(userId).then((data) => {
+      dispatch(setUsersProfile(data));
+    });
+  };
+};
 
 export default profileReducer;
