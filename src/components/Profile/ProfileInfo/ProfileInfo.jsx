@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./profileInfo.module.css";
 import avatar from "../../../img/avatar.jpeg";
+import user from "../../../img/users.jpeg";
 import bg1 from "../../../img/bg.jpeg";
 
 const ProfileInfo = (props) => {
@@ -12,7 +13,11 @@ const ProfileInfo = (props) => {
       {/* <img src={avatar} className={s.avatar} alt="avatar"></img> */}
       <div className={s.aboutMe}></div>
       <img
-        src={props.profile.photos.large}
+        src={
+          props.profile.photos.large !== null
+            ? props.profile.photos.large
+            : user
+        }
         alt="avatar"
         className={s.userPhoto}
       ></img>
